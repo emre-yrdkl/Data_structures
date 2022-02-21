@@ -50,7 +50,7 @@ int main(int argc, char* argv[])
 
     file_path = argv[1];
 
-    inFile.open(file_path,ios::in);
+    inFile.open(file_path);
 
     if (!inFile.is_open()) 
     {
@@ -62,17 +62,11 @@ int main(int argc, char* argv[])
 
         string s;
 
-        while(1){
-            inFile >> s;
+        while(inFile >> s){
 
-            
             strvector.push_back(s);
             strvector2.push_back(s);
 
-            if(inFile.eof()){
-
-                break;
-            }
         }
     }
 
